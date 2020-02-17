@@ -5,7 +5,7 @@ namespace SQLConsole
 {
     delegate void RegularQueries();
     delegate void ParameterQueries(string artist, string title);
-    delegate void EditQuery(string artist, string title, string _Artist, string _title);
+    delegate void EditQuery(string artist, string title, string _artist, string _title);
 
     class Program
     {
