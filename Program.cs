@@ -5,6 +5,7 @@ namespace SQLConsole
 {
     delegate void RegularQueries();
     delegate void ParameterQueries(string artist, string title);
+    delegate void EditQuery(string artist, string title, string _Artist, string _title);
 
     class Program
     {
@@ -16,7 +17,7 @@ namespace SQLConsole
             ParameterQueries insert = new ParameterQueries(funcs.InsertIntoQuery);
             ParameterQueries delete = new ParameterQueries(funcs.SelectWithParamQuery);
             ParameterQueries select = new ParameterQueries(funcs.SelectWithParamQuery);
-            ParameterQueries edit = new ParameterQueries(funcs.EditWithParamQuery);
+            EditQuery edit = new EditQuery(funcs.EditWithParamQuery);
 
             bool flag = false;
 
@@ -72,7 +73,11 @@ namespace SQLConsole
                             string artistD = Console.ReadLine();
                             Console.WriteLine("Enter new title");
                             string titleD = Console.ReadLine();
-                            edit(artistD, titleD);
+                            Console.WriteLine("Enter new artist name");
+                            string _artist = Console.ReadLine();
+                            Console.WriteLine("Enter new title");
+                            string _title = Console.ReadLine();
+                            edit(artistD, titleD, _artist, _title);
                             break;
                         case "Exit":
                             Console.WriteLine("Exiting...");
@@ -96,14 +101,14 @@ namespace SQLConsole
                     {
                         flag = false;
                     }
-
-                    Console.ReadLine();
                 }
             }
             catch (SqlException e)
             {
                 Console.WriteLine("Error: {0}", e.InnerException);
             }
+
+            Console.ReadLine();
         }
     }
 
@@ -114,7 +119,7 @@ namespace SQLConsole
         void InsertIntoQuery(string artist, string title);
         void DeleteWithParamQuery(string artist, string title);
         void SelectWithParamQuery(string artist, string title);
-        void EditWithParamQuery(string artist, string title);
+        void EditWithParamQuery(string artist, string title, string _artist, string _title);
     }
 
     class SQLFunctions : ISQLFunctions
@@ -140,9 +145,6 @@ namespace SQLConsole
                 {
                     conn.Open();
                     SqlCommand command = new SqlCommand(query, conn);
-
-                    int result = command.ExecuteNonQuery();
-
                     SqlDataReader reader = command.ExecuteReader();
 
                     if (!reader.HasRows)
@@ -214,8 +216,8 @@ namespace SQLConsole
                     SqlCommand command = new SqlCommand(query, conn);
                     command.Parameters.AddWithValue("@artist", artist);
                     command.Parameters.AddWithValue("@title", title);
+                    
                     int result = command.ExecuteNonQuery();
-
                     Console.WriteLine("{0} rows affected", result);
                 }
             }
@@ -240,7 +242,6 @@ namespace SQLConsole
                     command.Parameters.AddWithValue("@title", title);
 
                     int result = command.ExecuteNonQuery();
-
                     Console.WriteLine("{0} rows affected", result);
                 }
             }
@@ -253,7 +254,7 @@ namespace SQLConsole
         public void SelectWithParamQuery(string artist, string title)
         {
             string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-            string query = "Select * FROM MusicTable WHERE Artist = @artist AND Title = @title";
+            string query = "Select * FROM MusicTable WHERE Artist = @artist AND TItle = @title";
 
             try
             {
@@ -263,8 +264,6 @@ namespace SQLConsole
                     SqlCommand command = new SqlCommand(query, conn);
                     command.Parameters.AddWithValue("@artist", artist);
                     command.Parameters.AddWithValue("@title", title);
-
-                    int result = command.ExecuteNonQuery();
 
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -290,10 +289,10 @@ namespace SQLConsole
             }
         }
 
-        public void EditWithParamQuery(string artist, string title)
+        public void EditWithParamQuery(string artist, string title, string _artist, string _title)
         {
             string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-            string query = "UPDATE MusicTable SET Title = @title WHERE Artist = @artist";
+            string query = "UPDATE MusicTable SET Title = @title AND Artist = @artist WHERE Artist = @_artist and Title = @_title";
 
             try
             {
@@ -303,6 +302,8 @@ namespace SQLConsole
                     SqlCommand command = new SqlCommand(query, conn);
                     command.Parameters.AddWithValue("@artist", artist);
                     command.Parameters.AddWithValue("@title", title);
+                    command.Parameters.AddWithValue("@_artist", _artist);
+                    command.Parameters.AddWithValue("@_title", _title);
 
                     int result = command.ExecuteNonQuery();
 
