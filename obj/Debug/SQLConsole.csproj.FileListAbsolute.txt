@@ -1,0 +1,6 @@
+C:\Users\StaticVoidSA\source\repos\SQLConsole\bin\Debug\SQLConsole.exe.config
+C:\Users\StaticVoidSA\source\repos\SQLConsole\bin\Debug\SQLConsole.exe
+C:\Users\StaticVoidSA\source\repos\SQLConsole\bin\Debug\SQLConsole.pdb
+C:\Users\StaticVoidSA\source\repos\SQLConsole\obj\Debug\SQLConsole.csprojAssemblyReference.cache
+C:\Users\StaticVoidSA\source\repos\SQLConsole\obj\Debug\SQLConsole.exe
+C:\Users\StaticVoidSA\source\repos\SQLConsole\obj\Debug\SQLConsole.pdb
