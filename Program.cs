@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data.SqlClient;
 
 namespace SQLConsole
@@ -15,6 +15,7 @@ namespace SQLConsole
             RegularQueries deleteAll = new RegularQueries(funcs.DeleteAllQuery);
             ParameterQueries insert = new ParameterQueries(funcs.InsertIntoQuery);
             ParameterQueries delete = new ParameterQueries(funcs.SelectWithParamQuery);
+            ParameterQueries select = new ParameterQueries(funcs.SelectWithParamQuery);
             ParameterQueries edit = new ParameterQueries(funcs.EditWithParamQuery);
 
             bool flag = false;
@@ -30,6 +31,7 @@ namespace SQLConsole
                     Console.WriteLine("DAll \t-\t Delete all records");
                     Console.WriteLine("Insert \t-\t Insert new record");
                     Console.WriteLine("Delete \t-\t Delete a record");
+                    Console.WriteLine("Select \t-\t Select a record");
                     Console.WriteLine("Edit \t-\t Edit a record");
                     Console.WriteLine("Exit\n");
                     string ans = Console.ReadLine();
@@ -58,12 +60,19 @@ namespace SQLConsole
                             string titleB = Console.ReadLine();
                             delete(artistB, titleB);
                             break;
+                        case "Select":
+                            Console.WriteLine("Enter artist");
+                            string artistC = Console.ReadLine();
+                            Console.WriteLine("Enter title");
+                            string titleC = Console.ReadLine();
+                            select(artistC, titleC);
+                            break;
                         case "Edit":
                             Console.WriteLine("Enter artist to edit");
-                            string artistC = Console.ReadLine();
+                            string artistD = Console.ReadLine();
                             Console.WriteLine("Enter new title");
-                            string titleC = Console.ReadLine();
-                            edit(artistC, titleC);
+                            string titleD = Console.ReadLine();
+                            edit(artistD, titleD);
                             break;
                         case "Exit":
                             Console.WriteLine("Exiting...");
@@ -256,7 +265,23 @@ namespace SQLConsole
                     command.Parameters.AddWithValue("@title", title);
 
                     int result = command.ExecuteNonQuery();
-                    Console.WriteLine("{0} rows affected", result);
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (!reader.HasRows)
+                    {
+                        Console.WriteLine("There are no records in datatable");
+                    }
+                    else
+                    {
+                        while (reader.Read())
+                        {
+                            string Artist = reader["Artist"].ToString();
+                            string Title = reader["Title"].ToString();
+
+                            Console.WriteLine("Artist: {0}\nTitle: {1}", Artist, Title);
+                        }
+                    }
                 }
             }
             catch (SqlException e)
