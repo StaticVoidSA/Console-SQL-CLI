@@ -50,28 +50,28 @@ namespace SQLConsole
                         case "Insert":
                             Console.WriteLine("Enter artist");
                             string artistA = Console.ReadLine();
-                            Console.WriteLine("Enter title");
+                            Console.WriteLine("Enter song title");
                             string titleA = Console.ReadLine();
                             insert(artistA, titleA);
                             break;
                         case "Delete":
                             Console.WriteLine("Enter artist to remove");
                             string artistB = Console.ReadLine();
-                            Console.WriteLine("Enter title to remove");
+                            Console.WriteLine("Enter song title to remove");
                             string titleB = Console.ReadLine();
                             delete(artistB, titleB);
                             break;
                         case "Select":
                             Console.WriteLine("Enter artist");
                             string artistC = Console.ReadLine();
-                            Console.WriteLine("Enter title");
+                            Console.WriteLine("Enter song title");
                             string titleC = Console.ReadLine();
                             select(artistC, titleC);
                             break;
                         case "Edit":
                             Console.WriteLine("Enter artist to edit");
                             string artistD = Console.ReadLine();
-                            Console.WriteLine("Enter new title");
+                            Console.WriteLine("Enter song title");
                             string titleD = Console.ReadLine();
                             Console.WriteLine("Enter new artist name");
                             string _artist = Console.ReadLine();
