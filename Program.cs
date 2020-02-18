@@ -93,7 +93,7 @@ namespace SQLCLI
                             flag = true;
                             break;
                         default:
-                            Console.WriteLine("Please make a valid selection");
+                            Console.WriteLine("Please enter a valid selection");
                             break;
                     }
 
