@@ -508,7 +508,7 @@ namespace SQLCLI
             companyPeople.Add(new Artists { Artist = "Jackie Knox", Title = "Knox you out" }, new Company { CompanyName = "Lone Records", CompanyAddress = "223 Sandton Drive Johannesburg", CompanyEmail = "jk@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Liam Fisher", Title = "Know your here" }, new Company { CompanyName = "Null Records", CompanyAddress = "45 Tall Str. Johannesburg", CompanyEmail = "liam@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Mike Bully", Title = "Living Large" }, new Company { CompanyName = "Null Records", CompanyAddress = "345 June Str. Cape Town", CompanyEmail = "mikeb@gmail.com" });
-            companyPeople.Add(new Artists { Artist = "Neil Diamon", Title = "Sweet Caroline" }, new Company { CompanyName = "Rough Records", CompanyAddress = "887 Sandton Drive Johannesburg", CompanyEmail = "neil@gmail.com" });
+            companyPeople.Add(new Artists { Artist = "Neil Diamond", Title = "Sweet Caroline" }, new Company { CompanyName = "Rough Records", CompanyAddress = "887 Sandton Drive Johannesburg", CompanyEmail = "neil@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Jack Jackson", Title = "Hard Banger" }, new Company { CompanyName = "Done Records", CompanyAddress = "12 Hendrick Str. Johannesburg", CompanyEmail = "jack@gmail.com" });
 
             try
