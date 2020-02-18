@@ -307,7 +307,7 @@ namespace SQLCLI
             }
             catch (SqlException e)
             {
-                Console.WriteLine($"Error: {e.InnerException}");
+                Console.WriteLine($"Error: {e.Message}");
             }
         }
 
@@ -336,7 +336,7 @@ namespace SQLCLI
             }
             catch (SqlException e)
             {
-                Console.WriteLine($"Error: {e.InnerException}");
+                Console.WriteLine($"Error: {e.Message}");
             }
         }
 
@@ -368,7 +368,7 @@ namespace SQLCLI
             }
             catch (SqlException e)
             {
-                Console.WriteLine($"Error: {e.InnerException}");
+                Console.WriteLine($"Error: {e.Message}");
             }
         }
 
@@ -409,7 +409,7 @@ namespace SQLCLI
             }
             catch (SqlException e)
             {
-                Console.WriteLine($"Error {e.InnerException}");
+                Console.WriteLine($"Error {e.Message}");
             }
         }
 
@@ -441,7 +441,7 @@ namespace SQLCLI
             }
             catch (SqlException e)
             {
-                Console.WriteLine($"Error: {e.InnerException}");
+                Console.WriteLine($"Error: {e.Message}");
             }
         }
 
