@@ -492,7 +492,7 @@ namespace SQLCLI
             companyPeople.Add(new Artists { Artist = "Darmec", Title = "Doof Doof" }, new Company { CompanyName = "Bad Taste Audio", CompanyAddress = "23 Jippe Str. Johannesburg", CompanyEmail = "darmec@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Sputnik", Title = "Greener pastures" }, new Company { CompanyName = "Just Done", CompanyAddress = "45 Franklyn Avenue", CompanyEmail = "sput@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Optiv", Title = "Lost generation" }, new Company { CompanyName = "Split It Audio", CompanyAddress = "23 Krune Rd. Cape Town", CompanyEmail = "optiv@gmail.com" });
-            companyPeople.Add(new Artists { Artist = "Tessa", Title = "Heels up high" }, new Company { CompanyName = "Deaf Recordings", CompanyAddress = "12 Ben Drive Johannesburg", CompanyEmail = "tess@gmail.com" });
+            companyPeople.Add(new Artists { Artist = "Tessa", Title = "Feels alright" }, new Company { CompanyName = "Deaf Recordings", CompanyAddress = "12 Ben Drive Johannesburg", CompanyEmail = "tess@gmail.com" });
             companyPeople.Add(new Artists { Artist = "David", Title = "Feels so good" }, new Company { CompanyName = "Tell It Recordings", CompanyAddress = "67 Weast Aveneue Cape town", CompanyEmail = "davidg@gmail.com" });
             companyPeople.Add(new Artists { Artist = "David Tamessi", Title = "Doof Doof" }, new Company { CompanyName = "Source Audio", CompanyAddress = "23 June Str. Cape Town", CompanyEmail = "dt@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Jim Joelson", Title = "Seems like dawn" }, new Company { CompanyName = "Lion Audio", CompanyAddress = "45 Gregory Drive Johannesburg", CompanyEmail = "jj@gmail.com" });
