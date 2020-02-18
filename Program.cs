@@ -24,7 +24,7 @@ namespace SQLCLI
 
             Console.WriteLine("Welcome to my SQL CLI\n");
             Console.WriteLine("Please enter your name\n");
-            string name = Console.ReadLine();
+            string name = Console.ReadLine().Trim();
             DateTime myDate = DateTime.Now;
             Console.WriteLine($"\nHello {name}");
             Console.WriteLine("Date: {0:d}\nTime: {0:t}", myDate);
@@ -56,34 +56,34 @@ namespace SQLCLI
                             break;
                         case "Insert":
                             Console.WriteLine("Enter artist");
-                            string artistA = Console.ReadLine();
+                            string artistA = Console.ReadLine().Trim();
                             Console.WriteLine("Enter title");
-                            string titleA = Console.ReadLine();
+                            string titleA = Console.ReadLine().Trim();
                             insert(artistA, titleA);
                             break;
                         case "Select":
                             Console.WriteLine("Enter artist");
-                            string artistB = Console.ReadLine();
+                            string artistB = Console.ReadLine().Trim();
                             Console.WriteLine("Enter title");
-                            string titleB = Console.ReadLine();
+                            string titleB = Console.ReadLine().Trim();
                             select(artistB, titleB);
                             break;
                         case "Delete":
                             Console.WriteLine("Enter artist");
-                            string artistC = Console.ReadLine();
+                            string artistC = Console.ReadLine().Trim();
                             Console.WriteLine("Enter title");
-                            string titleC = Console.ReadLine();
+                            string titleC = Console.ReadLine().Trim();
                             delete(artistC, titleC);
                             break;
                         case "Edit":
                             Console.WriteLine("Enter artist name");
-                            string artistD = Console.ReadLine();
+                            string artistD = Console.ReadLine().Trim();
                             Console.WriteLine("Enter title");
-                            string titleD = Console.ReadLine();
+                            string titleD = Console.ReadLine().Trim();
                             Console.WriteLine("Enter new Artist name");
-                            string _artist = Console.ReadLine();
+                            string _artist = Console.ReadLine().Trim();
                             Console.WriteLine("Enter new song title");
-                            string _title = Console.ReadLine();
+                            string _title = Console.ReadLine().Trim();
                             edit(artistD, titleD, _artist, _title);
                             break;
                         case "Pop":
@@ -98,7 +98,7 @@ namespace SQLCLI
                     }
 
                     Console.WriteLine("End of query. \nWould you like to perform another? Yes? No?\n");
-                    string continueAnswer = Console.ReadLine();
+                    string continueAnswer = Console.ReadLine().Trim();
 
                     switch (continueAnswer)
                     {
