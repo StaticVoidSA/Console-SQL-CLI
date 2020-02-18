@@ -103,7 +103,7 @@ namespace SQLCLI
                     switch (continueAnswer)
                     {
                         case "No":
-                            Console.WriteLine("Closing appilcation");
+                            Console.WriteLine("Closing application...");
                             flag = true;
                             break;
                         case "Yes":
