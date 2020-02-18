@@ -431,7 +431,7 @@ namespace SQLCLI
 
                     if (result <= 0)
                     {
-                        Console.WriteLine($"No records to remove");
+                        Console.WriteLine("No records to remove");
                     }
                     else
                     {
