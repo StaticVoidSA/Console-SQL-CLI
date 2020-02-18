@@ -36,14 +36,14 @@ namespace SQLCLI
                 while (flag == false)
                 {
                     Console.WriteLine("What would you like to do?\n");
-                    Console.WriteLine("Get All\t\t-\tGet all records");
-                    Console.WriteLine("Delete All\t\t-\tDelete all records");
-                    Console.WriteLine("Insert \t\t-\tInsert a new record");
-                    Console.WriteLine("Select \t\t-\tSelect record");
-                    Console.WriteLine("Delete \t\t-\tDelete a record");
-                    Console.WriteLine("Edit \t\t-\tEdit a record");
-                    Console.WriteLine("Pop \t\t-\tPopulate datatable with existing data");
-                    Console.WriteLine("Exit \t\t-\tEnd application\n");
+                    Console.WriteLine("Get All\t\t\t-\tGet all records");
+                    Console.WriteLine("Delete All\t\t\t-\tDelete all records");
+                    Console.WriteLine("Insert \t\t\t-\tInsert a new record");
+                    Console.WriteLine("Select \t\t\t-\tSelect record");
+                    Console.WriteLine("Delete \t\t\t-\tDelete a record");
+                    Console.WriteLine("Edit \t\t\t-\tEdit a record");
+                    Console.WriteLine("Pop \t\t\t-\tPopulate datatable with existing data");
+                    Console.WriteLine("Exit \t\t\t-\tEnd application\n");
                     string ans = Console.ReadLine().Trim();
 
                     switch (ans)
