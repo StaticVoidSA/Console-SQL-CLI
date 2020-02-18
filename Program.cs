@@ -32,82 +32,89 @@ namespace SQLCLI
 
             bool flag = false;
 
-            while (flag == false)
+            try
             {
-                Console.WriteLine("What would you like to do?\n");
-                Console.WriteLine("Get \t-\tGet all records");
-                Console.WriteLine("DAll \t-\tDelete all records");
-                Console.WriteLine("Insert \t-\tInsert a new record");
-                Console.WriteLine("Select \t-\tSelect record");
-                Console.WriteLine("Delete \t-\tDelete a record");
-                Console.WriteLine("Edit \t-\tEdit a record");
-                Console.WriteLine("Pop \t-\tPopulate datatable with existing data");
-                Console.WriteLine("Exit \t-\tEnd application\n");
-                string ans = Console.ReadLine().Trim();
-
-                switch (ans)
+                while (flag == false)
                 {
-                    case "Get":
-                        getAll();
-                        break;
-                    case "DAll":
-                        deleteAll();
-                        break;
-                    case "Insert":
-                        Console.WriteLine("Enter artist");
-                        string artistA = Console.ReadLine();
-                        Console.WriteLine("Enter title");
-                        string titleA = Console.ReadLine();
-                        insert(artistA, titleA);
-                        break;
-                    case "Select":
-                        Console.WriteLine("Enter artist");
-                        string artistB = Console.ReadLine();
-                        Console.WriteLine("Enter title");
-                        string titleB = Console.ReadLine();
-                        select(artistB, titleB);
-                        break;
-                    case "Delete":
-                        Console.WriteLine("Enter artist");
-                        string artistC = Console.ReadLine();
-                        Console.WriteLine("Enter title");
-                        string titleC = Console.ReadLine();
-                        delete(artistC, titleC);
-                        break;
-                    case "Edit":
-                        Console.WriteLine("Enter artist name");
-                        string artistD = Console.ReadLine();
-                        Console.WriteLine("Enter title");
-                        string titleD = Console.ReadLine();
-                        Console.WriteLine("Enter new Artist name");
-                        string _artist = Console.ReadLine();
-                        Console.WriteLine("Enter new song title");
-                        string _title = Console.ReadLine();
-                        edit(artistD, titleD, _artist, _title);
-                        break;
-                    case "Pop":
-                        populate();
-                        break;
-                    case "Exit":
+                    Console.WriteLine("What would you like to do?\n");
+                    Console.WriteLine("Get \t-\tGet all records");
+                    Console.WriteLine("DAll \t-\tDelete all records");
+                    Console.WriteLine("Insert \t-\tInsert a new record");
+                    Console.WriteLine("Select \t-\tSelect record");
+                    Console.WriteLine("Delete \t-\tDelete a record");
+                    Console.WriteLine("Edit \t-\tEdit a record");
+                    Console.WriteLine("Pop \t-\tPopulate datatable with existing data");
+                    Console.WriteLine("Exit \t-\tEnd application\n");
+                    string ans = Console.ReadLine().Trim();
+
+                    switch (ans)
+                    {
+                        case "Get":
+                            getAll();
+                            break;
+                        case "DAll":
+                            deleteAll();
+                            break;
+                        case "Insert":
+                            Console.WriteLine("Enter artist");
+                            string artistA = Console.ReadLine();
+                            Console.WriteLine("Enter title");
+                            string titleA = Console.ReadLine();
+                            insert(artistA, titleA);
+                            break;
+                        case "Select":
+                            Console.WriteLine("Enter artist");
+                            string artistB = Console.ReadLine();
+                            Console.WriteLine("Enter title");
+                            string titleB = Console.ReadLine();
+                            select(artistB, titleB);
+                            break;
+                        case "Delete":
+                            Console.WriteLine("Enter artist");
+                            string artistC = Console.ReadLine();
+                            Console.WriteLine("Enter title");
+                            string titleC = Console.ReadLine();
+                            delete(artistC, titleC);
+                            break;
+                        case "Edit":
+                            Console.WriteLine("Enter artist name");
+                            string artistD = Console.ReadLine();
+                            Console.WriteLine("Enter title");
+                            string titleD = Console.ReadLine();
+                            Console.WriteLine("Enter new Artist name");
+                            string _artist = Console.ReadLine();
+                            Console.WriteLine("Enter new song title");
+                            string _title = Console.ReadLine();
+                            edit(artistD, titleD, _artist, _title);
+                            break;
+                        case "Pop":
+                            populate();
+                            break;
+                        case "Exit":
+                            flag = true;
+                            break;
+                        default:
+                            Console.WriteLine("Please make a valid selection");
+                            break;
+                    }
+
+                    Console.WriteLine("End of query. \nWould you like to perform another? Yes? No?\n");
+                    string continueAnswer = Console.ReadLine();
+
+                    if (continueAnswer == "No")
+                    {
+                        Console.WriteLine("Closing application...\n");
                         flag = true;
-                        break;
-                    default:
-                        Console.WriteLine("Please make a valid selection");
-                        break;
+                    }
+                    else if (continueAnswer == "Yes")
+                    {
+                        flag = false;
+                    }
                 }
-
-                Console.WriteLine("End of query. \nWould you like to perform another? Yes? No?\n");
-                string continueAnswer = Console.ReadLine();
-
-                if (continueAnswer == "No")
-                {
-                    Console.WriteLine("Closing application...\n");
-                    flag = true;
-                }
-                else if (continueAnswer == "Yes")
-                {
-                    flag = false;
-                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error: {e.Message}");
             }
 
             Console.ReadLine();
@@ -485,11 +492,11 @@ namespace SQLCLI
             companyPeople.Add(new Artists { Artist = "Darmec", Title = "Doof Doof" }, new Company { CompanyName = "Bad Taste Audio", CompanyAddress = "23 Jippe Str. Johannesburg", CompanyEmail = "darmec@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Sputnik", Title = "Greener pastures" }, new Company { CompanyName = "Just Done", CompanyAddress = "45 Franklyn Avenue", CompanyEmail = "sput@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Optiv", Title = "Lost generation" }, new Company { CompanyName = "Split It Audio", CompanyAddress = "23 Krune Rd. Cape Town", CompanyEmail = "optiv@gmail.com" });
-            companyPeople.Add(new Artists { Artist = "Tessa", Title = "Head up high" }, new Company { CompanyName = "Deaf Recordings", CompanyAddress = "12 Ben Drive Johannesburg", CompanyEmail = "tess@gmail.com" });
+            companyPeople.Add(new Artists { Artist = "Tessa", Title = "Heels up high" }, new Company { CompanyName = "Deaf Recordings", CompanyAddress = "12 Ben Drive Johannesburg", CompanyEmail = "tess@gmail.com" });
             companyPeople.Add(new Artists { Artist = "David", Title = "Feels so good" }, new Company { CompanyName = "Tell It Recordings", CompanyAddress = "67 Weast Aveneue Cape town", CompanyEmail = "davidg@gmail.com" });
             companyPeople.Add(new Artists { Artist = "David Tamessi", Title = "Doof Doof" }, new Company { CompanyName = "Source Audio", CompanyAddress = "23 June Str. Cape Town", CompanyEmail = "dt@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Jim Joelson", Title = "Seems like dawn" }, new Company { CompanyName = "Lion Audio", CompanyAddress = "45 Gregory Drive Johannesburg", CompanyEmail = "jj@gmail.com" });
-            companyPeople.Add(new Artists { Artist = "Henry the Pope", Title = "Cheers at dawn" }, new Company { CompanyName = "Digital Dreams", CompanyAddress = "45 Long Str. Cape Town", CompanyEmail = "henry@gmail.com" });
+            companyPeople.Add(new Artists { Artist = "Henry the Pope", Title = "Tears at dawn" }, new Company { CompanyName = "Digital Dreams", CompanyAddress = "45 Long Str. Cape Town", CompanyEmail = "henry@gmail.com" });
             companyPeople.Add(new Artists { Artist = "David Tamessi", Title = "YOLO" }, new Company { CompanyName = "Tech Records", CompanyAddress = "112  Hill Rd. Johannesburg", CompanyEmail = "david@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Yolandi", Title = "Dreams on tap" }, new Company { CompanyName = "Lion Audio", CompanyAddress = "45 Gregory Drive Johannesburg", CompanyEmail = "yol@gmail.com" });
             companyPeople.Add(new Artists { Artist = "Gill Fisher", Title = "Here we go now" }, new Company { CompanyName = "Pole Position Records", CompanyAddress = "12 Peter Rd. Johannesburg", CompanyEmail = "gill@gmail.com" });
