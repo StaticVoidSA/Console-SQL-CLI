@@ -80,7 +80,7 @@ namespace SQLCLI
                             string artistD = Console.ReadLine().Trim();
                             Console.WriteLine("Enter title");
                             string titleD = Console.ReadLine().Trim();
-                            Console.WriteLine("Enter new Artist name");
+                            Console.WriteLine("Enter new artist name");
                             string _artist = Console.ReadLine().Trim();
                             Console.WriteLine("Enter new song title");
                             string _title = Console.ReadLine().Trim();
