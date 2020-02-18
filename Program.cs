@@ -186,7 +186,7 @@ namespace SQLCLI
 
         ~Artists()
         {
-
+            // Destructor
         }
     }
 
