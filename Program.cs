@@ -162,7 +162,7 @@ namespace SQLCLI
             {
                 if (value == "")
                 {
-                    Console.WriteLine("Please enter a valid value");
+                    Console.WriteLine("Please enter a valid string");
                 }
                 else
                 {
