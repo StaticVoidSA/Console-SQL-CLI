@@ -26,7 +26,7 @@ namespace SQLCLI
             Console.WriteLine("Please enter your name\n");
             string name = Console.ReadLine().Trim();
             DateTime myDate = DateTime.Now;
-            Console.WriteLine($"\nHello {name}");
+            Console.WriteLine($"\nWelcome {name}");
             Console.WriteLine("Date: {0:d}\nTime: {0:t}", myDate);
 
             bool flag = false;
