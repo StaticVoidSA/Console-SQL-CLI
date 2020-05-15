@@ -35,7 +35,7 @@ namespace SQLConsole
                     Console.WriteLine("Select \t-\t Select a record");
                     Console.WriteLine("Edit \t-\t Edit a record");
                     Console.WriteLine("Exit\n");
-                    string ans = Console.ReadLine();
+                    string ans = Console.ReadLine().Trim();
                     string artist = null, title = null;
                     string _artist = null, _title = null;
 
@@ -92,7 +92,7 @@ namespace SQLConsole
 
 
                     Console.WriteLine("Do you wish to try again? Yes? No?");
-                    string continueAnswer = Console.ReadLine();
+                    string continueAnswer = Console.ReadLine().Trim();
 
                     if (continueAnswer == "No")
                     {
