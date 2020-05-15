@@ -15,7 +15,7 @@ namespace SQLConsole
             RegularQueries getAll = new RegularQueries(funcs.GetAllQuery);
             RegularQueries deleteAll = new RegularQueries(funcs.DeleteAllQuery);
             ParameterQueries insert = new ParameterQueries(funcs.InsertIntoQuery);
-            ParameterQueries delete = new ParameterQueries(funcs.SelectWithParamQuery);
+            ParameterQueries delete = new ParameterQueries(funcs.DeleteWithParamQuery);
             ParameterQueries select = new ParameterQueries(funcs.SelectWithParamQuery);
             EditQuery edit = new EditQuery(funcs.EditWithParamQuery);
 
