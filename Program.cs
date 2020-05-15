@@ -58,27 +58,27 @@ namespace SQLConsole
                             break;
                         case "Delete":
                             Console.WriteLine("Enter artist to remove");
-                            artist = Console.ReadLine();
+                            artist = Console.ReadLine().Trim();
                             Console.WriteLine("Enter title to remove");
-                            title = Console.ReadLine();
+                            title = Console.ReadLine().Trim();
                             delete(artist, title);
                             break;
                         case "Select":
                             Console.WriteLine("Enter artist");
-                            artist = Console.ReadLine();
+                            artist = Console.ReadLine().Trim();
                             Console.WriteLine("Enter title");
-                            title = Console.ReadLine();
+                            title = Console.ReadLine().Trim();
                             select(artist, title);
                             break;
                         case "Edit":
                             Console.WriteLine("Enter artist to edit");
-                            artist = Console.ReadLine();
+                            artist = Console.ReadLine().Trim();
                             Console.WriteLine("Enter new title");
-                            title = Console.ReadLine();
+                            title = Console.ReadLine().Trim();
                             Console.WriteLine("Enter new artist name");
-                            _artist = Console.ReadLine();
+                            _artist = Console.ReadLine().Trim();
                             Console.WriteLine("Enter new title");
-                            _title = Console.ReadLine();
+                            _title = Console.ReadLine().Trim();
                             edit(artist, title, _artist, _title);
                             break;
                         case "Exit":
