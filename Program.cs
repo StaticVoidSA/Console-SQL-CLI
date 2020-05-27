@@ -73,7 +73,7 @@ namespace SQLConsole
                         case "Edit":
                             Console.WriteLine("Enter artist to edit");
                             artist = Console.ReadLine().Trim();
-                            Console.WriteLine("Enter new title");
+                            Console.WriteLine("Enter song title");
                             title = Console.ReadLine().Trim();
                             Console.WriteLine("Enter new artist name");
                             _artist = Console.ReadLine().Trim();
