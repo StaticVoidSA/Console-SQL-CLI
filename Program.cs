@@ -109,6 +109,10 @@ namespace SQLConsole
             {
                 Console.WriteLine("Error: {0}", e.InnerException);
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: {0}", e.Innerexxeption);
+            }
 
             Console.ReadLine();
         }
