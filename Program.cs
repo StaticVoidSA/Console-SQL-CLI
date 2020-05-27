@@ -167,7 +167,6 @@ namespace SQLConsole
                             Console.WriteLine("Artist: {0}\nTitle: {1}", artist, title);
                         }
                     }
-
                 }
             }
             catch (SqlException e)
