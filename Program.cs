@@ -259,7 +259,7 @@ namespace SQLConsole
         public void SelectWithParamQuery(string artist, string title)
         {
             string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-            string query = "Select * FROM MusicTable WHERE Artist = @artist AND TItle = @title";
+            string query = "Select * FROM MusicTable WHERE Artist = @artist AND Title = @title";
 
             try
             {
