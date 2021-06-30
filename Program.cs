@@ -111,7 +111,7 @@ namespace SQLConsole
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: {0}", e.Innerexxeption);
+                Console.WriteLine("Error: {0}", e.InnerException);
             }
 
             Console.ReadLine();
