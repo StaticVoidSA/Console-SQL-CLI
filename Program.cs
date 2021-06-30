@@ -10,7 +10,6 @@ namespace SQLConsole
     class Program
     {
         public static string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-        public static string query = "SELECT * FROM MusicTable;";
         
         static void Main(string[] args)
         {
