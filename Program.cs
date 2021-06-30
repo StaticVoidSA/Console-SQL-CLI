@@ -9,8 +9,8 @@ namespace SQLConsole
 
     class Program
     {
-        public string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-        public string query = "SELECT * FROM MusicTable";
+        public static string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
+        public static string query = "SELECT * FROM MusicTable";
         
         static void Main(string[] args)
         {
