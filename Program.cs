@@ -9,6 +9,9 @@ namespace SQLConsole
 
     class Program
     {
+        public string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
+        public string query = "SELECT * FROM MusicTable";
+        
         static void Main(string[] args)
         {
             SQLFunctions funcs = new SQLFunctions();
@@ -142,9 +145,6 @@ namespace SQLConsole
 
         public void GetAllQuery()
         {
-            string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-            string query = "SELECT * FROM MusicTable";
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -181,9 +181,6 @@ namespace SQLConsole
 
         public void DeleteAllQuery()
         {
-            string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-            string query = "DELETE FROM MusicTable";
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -210,9 +207,6 @@ namespace SQLConsole
 
         public void InsertIntoQuery(string artist, string title)
         {
-            string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-            string query = "INSERT INTO MusicTable(Artist, Title) VALUES(@artist, @title)";
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -234,9 +228,6 @@ namespace SQLConsole
 
         public void DeleteWithParamQuery(string artist, string title)
         {
-            string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-            string query = "DELETE FROM MusicTable WHERE Title = @title AND Artist = @artist";
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -258,9 +249,6 @@ namespace SQLConsole
 
         public void SelectWithParamQuery(string artist, string title)
         {
-            string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-            string query = "Select * FROM MusicTable WHERE Artist = @artist AND Title = @title";
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -296,9 +284,6 @@ namespace SQLConsole
 
         public void EditWithParamQuery(string artist, string title, string _artist, string _title)
         {
-            string connectionString = "Server=localhost;Database=StoreMusic;Integrated Security=true;";
-            string query = "UPDATE MusicTable SET Title = @title AND Artist = @artist WHERE Artist = @_artist and Title = @_title";
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
